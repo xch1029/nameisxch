@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="319f4c0c-e9bb-47dd-b1fc-3dda2482334c" name="nameisxch" url="http://x15050916913.gotoftp2.com">
+        <fileTransfer host="x15050916913.gotoftp2.com" port="21" rootFolder="/x15050916913">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
