@@ -1,142 +1,171 @@
-/* General Demo Style */
-@charset "UTF-8";
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700|Gorditas:400,700);
+/* 基础css */
 
-*,
-*:after,
-*:before {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+body, html { font-size: 100%; padding: 0; margin: 0;}
 
 /* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
-.clearfix:before,
-.clearfix:after {
-    content: " ";
-    display: table;
-}
-
-.clearfix:after {
-    clear: both;
-}
-
-.clearfix {
-    *zoom: 1;
-}
+.clearfix:before, .clearfix:after { content: " "; display: table; }
+.clearfix:after { clear: both; }
 
 body {
     font-family: 'Lato', Calibri, Arial, sans-serif;
-    background: #c2edf4;
-    font-weight: 300;
-    font-size: 14px;
-    color: #333;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    color: #fff;
+    background: #333;
 }
 
 a {
-    color: #555;
+    color: #ccc;
     text-decoration: none;
 }
 
-.container {
-    width: 100%;
-    position: relative;
-}
-
-.container > header,
-.main {
-    width: 100%;
-    max-width: 1060px;
-    margin: 0 auto;
-    padding: 0 30px;
-}
-
-.container > header {
-    padding: 30px 30px 0px 30px;
-    font-family: 'Gorditas', Arial, sans-serif;
-}
-
-.container > header h1 {
-    margin: 0;
-    font-weight: 400;
-    color: #41838e;
-    font-size: 16px;
-    text-shadow: 0 1px 1px rgba(255,255,255,0.4);
-}
-
-.container > header h1 span {
-    color: #F26328;
-}
-
-.container > header h2 {
-    padding: 10px 0;
-    margin: 0;
-    font-size: 32px;
-    line-height: 58px;
-    color: #fff;
-    font-weight: 400;
-    position: relative;
-    background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAI0lEQVQIW2P8DwSMQMCABBhBgiA+sgRYBboEXBuyBIpZMAkAW1YUAh9deX8AAAAASUVORK5CYII=) repeat-x bottom left;
-    text-shadow: 4px 4px 0px #41838e;
-}
-
-.container > header h2 span {
-    display: block;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 10px;
-    font-size: 18px;
-    color: #F26328;
-    text-shadow: none;
-}
-
-/* Header Style */
-.codrops-top {
-    font-size: 11px;
-    line-height: 24px;
-    background: #fff;
-    background: rgba(255, 255, 255, 0.8);
-    text-transform: uppercase;
-    z-index: 9999;
-    position: relative;
-    box-shadow: 1px 0px 2px rgba(0,0,0,0.2);
-}
-
-.codrops-top a {
-    padding: 0px 10px;
-    letter-spacing: 1px;
-    color: #333;
-    text-shadow: 0 -1px 0 #fff;
-    display: inline-block;
-}
-
-.codrops-top a:hover {
-    background: rgba(255,255,255,0.8);
+a:hover {
     color: #000;
 }
 
-.codrops-top span.right {
-    float: right;
+.codropsheader {
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+    padding: 1.4em;
+    opacity: 0.7;
+    visibility: visible;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
 }
 
-.codrops-top span.right a {
+.codropsheader h1 {
+    font-size: 2.125em;
+    line-height: 1.3;
+    margin: 0 0 0.6em 0;
     float: left;
+    font-weight: 400;
+}
+
+.codropsheader > span {
+    display: block;
+    position: relative;
+    z-index: 9999;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    padding: 0 0 0.6em 0.1em;
+}
+
+.codropsheader > span span:after {
+    width: 30px;
+    height: 30px;
+    left: -12px;
+    top: -8px;
+    font-size: 75%;
+    position: relative;
+}
+
+.codropsheader > span span:hover:before {
+    content: attr(data-content);
+    text-transform: none;
+    text-indent: 0;
+    letter-spacing: 0;
+    font-weight: 300;
+    font-size: 110%;
+    padding: 0.8em 1em;
+    line-height: 1.2;
+    text-align: left;
+    left: auto;
+    margin-left: 4px;
+    position: absolute;
+    color: #47a3da;
+    background: #fff;
+    transform: translateX(14px) translateY(14px);
+    border-radius: 0.5em;
+}
+
+.codropsheader nav {
+    float: left;
+    text-align: center;
+    margin-left: 1.5em;
     display: block;
 }
 
-.support-note {
-    clear: both;
+.codropsheader nav a {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    width: 2.5em;
+    height: 2.5em;
+    background: #47a3da;
+    border-radius: 50%;
+    margin: 0 0.1em;
+    border: 3px solid #fff;
 }
 
-.support-note span{
-    color: #ac375d;
-    font-size: 16px;
+.codropsheader nav a > span {
     display: none;
-    font-weight: bold;
-    text-align: center;
-    padding: 5px 0;
+}
+
+.codropsheader nav a:hover:before {
+    content: attr(data-info);
+    color: #fff;
+    position: absolute;
+    width: 600%;
+    top: 120%;
+    text-align: right;
+    right: 0;
+    pointer-events: none;
+}
+
+.codropsheader nav a:hover {
+    background: #fff;
+}
+
+.codropsheader nav a:hover:after {
+    color: #47a3da;
+}
+.codropsheader nav a i{
+    position: absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);/*自身的一半，达到居中的目的*/
+}
+
+.demos {
+    display: inline-block;
+    line-height: 2.4em;
+    margin-left: 1em;
+    float: right;
+}
+
+.demos a {
+    display: inline-block;
+    color: #fff;
+    margin: 0 0.5em;
+}
+
+.demos a:hover,
+.demos a:focus,
+.demos a.current {
+    color: rgba(0,0,0,.4);
+}
+
+@media screen and (max-width: 73.375em) {
+    .codropsheader {
+        text-align: center;
+    }
+    .codropsheader h1,
+    .codropsheader nav,
+    .demos {
+        float: none;
+        margin: 0 auto;
+        padding: 0.15em 0;
+    }
+    .codropsheader > span {
+        padding: 0;
+    }
+    .codropsheader > span span:after {
+        display: none;
+    }
+}
+
+@media screen and (max-height: 30.25em) {
+    .codropsheader nav { display: none; }
 }
